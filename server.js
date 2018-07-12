@@ -1,12 +1,13 @@
 let express = require("express");
 let app = express();
-let htmlRouter = require("/routing/html.js");
-let apiRounter = require(__dirname + "app/routing/api.js")
-const PORT = 4040;
+let htmlRouter = require("./app/routing/html.js");
+let apiRouter = require("./app/routing/api.js")
+const PORT = process.env.PORT || 4040;
 
 app.listen(PORT, function() {
     console.log("Listening at http://localhost:" + PORT);
 });
 
 app.use(htmlRouter);
-app.use(apiRouter);
+app.use("/api", apiRouter);
+

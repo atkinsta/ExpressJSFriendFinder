@@ -1,0 +1,24 @@
+{
+  "name": "expressjsfriendfinder",
+  "version": "1.0.0",
+  "description": "Homework 11, An ExpressJS app that links users based on survey results",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atkinsta/ExpressJSFriendFinder.git"
+  },
+  "author": "Ty Atkins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atkinsta/ExpressJSFriendFinder/issues"
+  },
+  "homepage": "https://github.com/atkinsta/ExpressJSFriendFinder#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "path": "^0.12.7"
+  }
+}
