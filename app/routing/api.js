@@ -20,8 +20,9 @@ apiRouter.get("/", function(req, res) {
 });
 
 apiRouter.post("/", function (req, res) {
-    console.log("post test");
-    console.log(req.body);
+    var newFriend = req.body;
+    friends.push(newFriend);
+    console.log(friends);
 });
 
 module.exports = apiRouter;
