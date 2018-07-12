@@ -1,7 +1,7 @@
 # ExpressJSFriendFinder
 Homework 11, An ExpressJS app that links users based on survey results
 
-##Technology used
+## Technology used
 
 This app uses ExpressJS to create a functioning server, API, and routing system for the app to work. 
 
