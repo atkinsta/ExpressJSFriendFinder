@@ -12,17 +12,34 @@ apiRouter.use(function (req, res, next) {
 });
 
 apiRouter.get("/friends", function(req, res) {
-    res.send("test /api/friends");
+    res.json(friends);
 });
 
 apiRouter.get("/", function(req, res) {
     res.json(friends);
 });
 
+Array.prototype.compareAbs = function (array2) {
+    let absDifference = 0;;
+    for (var i=0; i<this.length; i++) {
+        absDifference += (Math.abs(parseInt(this[i]) - parseInt(array2[i])));
+    }
+    return absDifference;
+}
+
 apiRouter.post("/", function (req, res) {
-    var newFriend = req.body;
+    let newFriend = req.body;
+    let newStats = newFriend.scores;
+    let bestScore = 1000;
+    let bestMatch;
+    friends.forEach(friend => {
+        if (friend.scores.compareAbs(newStats) < bestScore) {
+            bestScore = friend.scores.compareAbs(newStats);
+            bestMatch = friend;
+        }
+    });
     friends.push(newFriend);
-    console.log(friends);
+    res.json(bestMatch);
 });
 
 module.exports = apiRouter;

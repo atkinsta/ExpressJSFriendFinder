@@ -11,26 +11,200 @@
 </head>
 
 <body>
+
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="jumbotron">
                     <h1>Friend Finder!</h1>
-                    <h3>Take this quick survey to find potential matches...</h3>
+                    <h6>Take this quick survey to find potential matches...</h6>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <form action="/api" method="post">
-                    <input type="text" name="nameInput" id="name">
-                    <input type="text" name="linkInput" id="link">
-                    <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+                <form>
+                    <div class="form-group">
+                        <h2>Your Name</h2>
+                        <input type="text" class="form-control" id="nameInput" name="name" placeholder="Enter Name">
+                        <h2>Image Link</h2>
+                        <input type="text" class="form-control" id="imageInput" name="image" placeholder="Link an image here">
+                    </div>
+                    <div class="form-group">
+                        <h4>Question 1</h4>
+                        <h6>question text</h6>
+                        <select class="chosen-select" id="q1">
+                            <option value=""></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+
+                        <br>
+                        <h4>Question 2</h4>
+                        <h6>question text</h6>
+                        <select class="chosen-select" id="q2">
+                            <option value=""></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+
+                        <br>
+                        <h6>Question 3</h4>
+                            <h5>question text</h6>
+                        <select class="chosen-select" id="q3">
+                            <option value=""></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+
+                        <br>
+                        <h4>Question 4</h4>
+                        <h6>question text</h6>
+                        <select class="chosen-select" id="q4">
+                            <option value=""></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+
+                        <h4>Question 5</h4>
+                        <h6>question text</h6>
+                        <select class="chosen-select" id="q5">
+                            <option value=""></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+
+                        <br>
+                        <h4>Question 6</h4>
+                        <h6>question text</h6>
+                        <select class="chosen-select" id="q6">
+                            <option value=""></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                        <h4>Question 7</h4>
+                        <h6>question text</h6>
+                        <select class="chosen-select" id="q7">
+                            <option value=""></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+
+                        <br>
+                        <h4>Question 8</h4>
+                        <h6>question text</h6>
+                        <select class="chosen-select" id="q8">
+                            <option value=""></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                        <h4>Question 9</h4>
+                        <h6>question text</h6>
+                        <select class="chosen-select" id="q9">
+                            <option value=""></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+
+                        <br>
+                        <h4>Question 10</h4>
+                        <h6>question text</h6>
+                        <select class="chosen-select" id="q10">
+                            <option value=""></option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                    <button type="submit" id="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
         </div>
     </div>
 
+    <div id="results" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title text-center">
+                        <strong>Best Match</strong>
+                    </h2>
+                </div>
+                <div class="modal-body">
+                    <h2 id="matchName"></h2>
+                    <img id="matchImage" src="https://via.placeholder.com/400" alt="" style="width: 100%">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        $("#submit").on("click", function () {
+            event.preventDefault();
+            var userData = {
+                name: $("#nameInput").val().trim(),
+                photo: $("#imageInput").val().trim(),
+                scores: [
+                    $("#q1").val(),
+                    $("#q2").val(),
+                    $("#q3").val(),
+                    $("#q4").val(),
+                    $("#q5").val(),
+                    $("#q6").val(),
+                    $("#q7").val(),
+                    $("#q8").val(),
+                    $("#q9").val(),
+                    $("#q10").val()
+                ]
+            };
+
+            $.post("/api", userData, function (matchData) {
+                $("#matchName").text(matchData.name);
+                $("#matchImage").attr("src", matchData.photo);
+                $("#results").modal("toggle");
+            });
+
+        });
+
+    </script>
 </body>
 
 </html>
