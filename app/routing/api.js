@@ -6,10 +6,10 @@ let apiRouter = express.Router();
 apiRouter.use(bodyParser.urlencoded({ extended: true }));
 apiRouter.use(bodyParser.json());
 
-apiRouter.use(function (req, res, next) {
-    console.log("Redirecting user from api...")
-    next()
-});
+// apiRouter.use(function (req, res, next) {
+//     console.log("Redirecting user from api...")
+//     next()
+// });
 
 apiRouter.get("/friends", function(req, res) {
     res.json(friends);
@@ -19,7 +19,7 @@ apiRouter.get("/", function(req, res) {
     res.json(friends);
 });
 
-Array.prototype.compareAbs = function (array2) {
+Array.prototype.compareAbs = function (array2) {  //This function can be called on an array and be passed a second array as an argument to get the abs difference between the two. 
     let absDifference = 0;;
     for (var i=0; i<this.length; i++) {
         absDifference += (Math.abs(parseInt(this[i]) - parseInt(array2[i])));
